@@ -21,3 +21,11 @@ FROM retirement_titles
 ORDER BY emp_no, to_date DESC;
 
 SELECT * FROM unique_titles;
+
+SELECT count(title) "count", title
+INTO retiring_titles
+FROM unique_titles
+GROUP BY title
+ORDER BY count DESC;
+
+SELECT * FROM retiring_titles;
