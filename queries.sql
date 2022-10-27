@@ -69,6 +69,7 @@ LEFT JOIN dept_emp
 ON retirement_info.emp_no = dept_emp.emp_no;
 
 -- Using Aliases for Code Readability
+-- You can ignore this part it is only practice
 SELECT ri.emp_no,
     ri.first_name,
 ri.last_name,
@@ -76,3 +77,11 @@ ri.last_name,
 FROM retirement_info as ri
 LEFT JOIN dept_emp as de
 ON ri.emp_no = de.emp_no;
+
+SELECT d.dept_name,
+     dm.emp_no,
+     dm.from_date,
+     dm.to_date
+FROM departments as d
+INNER JOIN dept_manager as dm
+ON d.dept_no = dm.dept_no;
